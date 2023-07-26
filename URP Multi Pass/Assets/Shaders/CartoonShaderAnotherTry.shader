@@ -25,6 +25,7 @@
 		Pass
 		{
 			Name "Outline"
+			// Tags { "LightMode" = "UniversalForward" }
 
 			Cull Front
 			
@@ -79,6 +80,8 @@
 		Pass
 		{
 			Name "Diffuse"
+			Tags { "LightMode" = "UniversalForward" }
+			// Tags { "LightMode" = "UniversalForwardOnly" }
 
 			CGPROGRAM
 			#pragma vertex vert
@@ -132,6 +135,7 @@
 				fixed4 col = tex2D(_MainTex, i.uv);
 
 				fixed4 final = col * fixed4(lighting, 1.0);
+				// fixed4 final = fixed4(0.5, 0, 0, 1.0);
 
 				// apply fog
 				UNITY_APPLY_FOG(i.fogCoord, final);
@@ -144,6 +148,7 @@
 		{
 			Name "Specular"
 			Blend One OneMinusSrcAlpha
+			Tags { "LightMode" = "UniversalForwardOnly" }
 
 			CGPROGRAM
 			#pragma vertex vert
@@ -196,8 +201,9 @@
 				specularFalloff = pow(specularFalloff, _Gloss);
 				specularFalloff *= _SpecularOpacity;
 
-				return specularFalloff;
+				return specularFalloff * _SpecularColor;
 			}
+
 			ENDCG
 		}
 	}

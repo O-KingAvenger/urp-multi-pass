@@ -27,14 +27,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _Cull: 1
-    - _Gloss: 9
+    - _Gloss: 1
     - _OutlineExtrusion: 0.02
-    - _ShadowSoftness: 0.031
-    - _SpecularOpacity: 1
+    - _ShadowSoftness: 0.384
+    - _SpecularOpacity: 0.671
     - _ZTest: 2
     - _ZWrite: 1
     m_Colors:
     - _AmbientColor: {r: 0.042808846, g: 0.5103504, b: 0.6981132, a: 1}
     - _OutlineColor: {r: 0.40874517, g: 0.6226415, b: 0.40824136, a: 1}
-    - _SpecularColor: {r: 0.8490566, g: 0.19624422, b: 0.19624422, a: 1}
+    - _SpecularColor: {r: 0.29492474, g: 1, b: 0.033018887, a: 1}
   m_BuildTextureStacks: []
